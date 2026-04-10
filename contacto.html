@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Seguridad -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:; form-action 'self' https://formspree.io;">
+
+  <!-- SEO -->
+  <title>Contacto — Jorge Fonseca</title>
+  <meta name="description" content="Sin formularios de 12 campos. Sin robots. Solo una conversación directa. Cuéntame tu situación.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto — Jorge Fonseca">
+  <meta property="og:description" content="Sin formularios de 12 campos. Sin llamadas de descubrimiento de 45 minutos. Una conversación.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="nav-header" id="site-header" role="banner">
+    <nav class="container nav-inner" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="nav-logo" aria-label="Jorge Fonseca — Inicio">Jorge Fonseca</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="como-trabajo.html">Cómo trabajo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="contacto.html" class="btn btn-primary nav-cta">Hablemos</a>
+
+      <button class="nav-hamburger"
+              id="nav-hamburger"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menú de navegación">
+      <ul role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="como-trabajo.html">Cómo trabajo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.html" class="btn btn-primary" style="margin-top:8px">Hablemos</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============ CONTENIDO PRINCIPAL ============ -->
+  <main id="main-content">
+
+    <!-- HERO DE PÁGINA -->
+    <section class="page-hero" aria-labelledby="page-heading">
+      <div class="container">
+        <span class="section-label">Contacto</span>
+        <h1 id="page-heading">
+          <span class="line">Sin formularios de 12 campos.</span>
+          <span class="line">Sin llamadas de "descubrimiento".</span>
+          <span class="line">Sin que te pasen a un comercial.</span>
+        </h1>
+        <p class="page-hero-sub">
+          Una conversación. Me cuentas dónde estás y qué quieres conseguir.
+          Vemos si tiene sentido trabajar juntos.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-layout" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- INFO -->
+          <div class="contact-info">
+            <h2 id="contact-heading" class="reveal">¿Qué pasa cuando escribes?</h2>
+            <p class="reveal">
+              Respondo en menos de 24 horas. Si veo que puedo ayudarte, te propongo una llamada
+              corta para entender bien tu situación. Sin venta, sin presión.
+            </p>
+            <p class="reveal">
+              Si no encajamos, te lo digo con la misma claridad con la que te lo diría si encajáramos.
+            </p>
+
+            <div class="contact-what reveal">
+              <h3>Lo que no encontrarás aquí</h3>
+              <ul class="diagnosis-list" role="list" style="margin-top: var(--space-m); margin-bottom: 0;">
+                <li>Formularios de 12 campos que parecen un examen.</li>
+                <li>Robots que te mandan respuestas automáticas de tres párrafos.</li>
+                <li>Llamadas de "descubrimiento" de 45 minutos con alguien de ventas.</li>
+                <li>Promesas de resultados garantizados sin saber nada de tu negocio.</li>
+              </ul>
+            </div>
+
+            <div class="contact-note reveal">
+              <p>Tus datos no van a ninguna lista de correo ni a ningún CRM de automatización. Solo a mí.</p>
+            </div>
+          </div>
+
+          <!-- FORMULARIO -->
+          <div class="contact-form-wrap">
+
+            <!-- Mensaje de éxito -->
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <h4>Mensaje recibido.</h4>
+              <p>Gracias por escribir. Te respondo en menos de 24 horas.</p>
+            </div>
+
+            <!--
+              FORMSPREE:
+              1. Crea una cuenta gratuita en formspree.io
+              2. Crea un nuevo formulario y copia tu endpoint
+              3. Reemplaza el action de abajo: action="https://formspree.io/f/XXXXXXXX"
+              4. En js/main.js, descomenta el bloque fetch() y elimina el setTimeout de simulación
+            -->
+            <form
+              id="contact-form"
+              class="contact-form reveal"
+              method="POST"
+              action="#"
+              novalidate
+              aria-label="Formulario de contacto"
+            >
+              <!-- Honeypot anti-spam (oculto para humanos, visible para bots) -->
+              <div style="display:none" aria-hidden="true">
+                <label for="_gotcha">No rellenar</label>
+                <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="field-name">Nombre <span aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="field-name"
+                  name="nombre"
+                  autocomplete="given-name"
+                  placeholder="¿Cómo te llamas?"
+                  required
+                  aria-required="true"
+                  aria-describedby="error-name"
+                  maxlength="100"
+                >
+                <span class="field-error-msg" id="error-name" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="field-email">Email <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="field-email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="Tu email de contacto"
+                  required
+                  aria-required="true"
+                  aria-describedby="error-email"
+                  maxlength="200"
+                >
+                <span class="field-error-msg" id="error-email" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="field-message">Cuéntame tu situación <span aria-hidden="true">*</span></label>
+                <textarea
+                  id="field-message"
+                  name="mensaje"
+                  placeholder="¿Dónde estás ahora? ¿Qué quieres conseguir? ¿Qué no ha funcionado? Cuéntamelo con tus palabras."
+                  required
+                  aria-required="true"
+                  aria-describedby="error-message"
+                  maxlength="5000"
+                ></textarea>
+                <span class="field-error-msg" id="error-message" role="alert"></span>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">[ Cuéntame tu caso ]</button>
+              </div>
+
+              <p class="form-privacy">
+                Tus datos solo llegan a mí. Sin listas de correo. Sin automatizaciones.
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Jorge Fonseca</a>
+          <p class="footer-tagline">Diseñador, publicista y estratega digital. 25 años haciendo que los buenos negocios parezcan lo que son.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegación en el pie">
+          <p class="footer-nav-title">Páginas</p>
+          <ul role="list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="como-trabajo.html">Cómo trabajo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact-col">
+          <p class="footer-nav-title">Hablemos</p>
+          <p class="footer-contact-text">¿Tienes un proyecto en mente? Sin formularios largos. Sin presión. Solo una conversación.</p>
+          <a href="mailto:jorge@jorgefonseca.es" class="footer-cta-link">jorge@jorgefonseca.es</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year">2026</span> Jorge Fonseca. Todos los derechos reservados.</span>
+        <span>Diseño y desarrollo propio.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    var yearEl = document.getElementById('footer-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
